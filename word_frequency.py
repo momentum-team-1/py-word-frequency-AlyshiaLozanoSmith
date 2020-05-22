@@ -32,12 +32,14 @@ def remove_stop_words(string, words_to_remove):
             return(words_to_count)
 
 def count_words(list):
-    word_count = [()]
+    word_count = dict()
     for word in list:
             if word in list:
                 word_count[word] += 1
             else:
                 word_count[word] = 1
+    
+    word_count = {key: value for key, value in word_count.items() if value >=6}
     return word_count            
     
 
